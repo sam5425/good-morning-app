@@ -1,0 +1,57 @@
+.morning-app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  #fcb69f;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+  margin-bottom: 5px;
+  color: #ff7a18;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #ff9f43;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #ff9f43;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background: #ff7a18;
+}
