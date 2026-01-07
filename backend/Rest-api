@@ -1,0 +1,29 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const pool = require("./db");
+
+// middleware
+app.use(cors());
+app.use(express.json());
+
+// POST student
+app.post("/students", async (req, res) => {
+  try {
+    const { name, phone_no, email } = req.body;
+
+    const newStudent = await pool.query(
+      "INSERT INTO students (name, phone_no, email) VALUES ($1, $2, $3) RETURNING *",
+      [name, phone_no, email]
+    );
+
+    res.status(201).json(newStudent.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(5000, () => {
+  console.log("server has started on port 5000");
+});
